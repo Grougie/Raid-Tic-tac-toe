@@ -14,6 +14,14 @@ var winner string
 var endGame = false
 
 func choicePlayer() {
+	fmt.Println("☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆")
+	fmt.Println("Welcome to the Tic Tac Toe game !")
+	fmt.Println("☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆")
+	fmt.Printf("\n")
+	fmt.Println("The grid is composed of 9 boxes numbered from 1 to 9.")
+	fmt.Println("To play, you must choose a box by entering the number corresponding to the box.")
+	fmt.Println("The first player to align 3 boxes wins the game.")
+	fmt.Printf("\n")
 	fmt.Print("Please choose either a cross (X) or a circle (O) : ")
 	fmt.Scan(&currentPlayer)
 
