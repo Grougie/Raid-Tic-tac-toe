@@ -100,7 +100,7 @@ func egalityGame() {
 	}
 }
 
-func joueurSuivant() {
+func nextPlayer() {
 	if joueurActuel == "X" {
 		joueurActuel = "O"
 	} else {
@@ -122,7 +122,7 @@ func jouer() {
 	for !finJeu {
 		round(joueurActuel)
 		endGameChecker()
-		joueurSuivant()
+		nextPlayer()
 	}
 	resultat()
 }
