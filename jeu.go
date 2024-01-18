@@ -33,11 +33,11 @@ func choicePlayer() {
 }
 
 func printGrid() {
-	fmt.Println("\n-------------")
+	fmt.Println("\n▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 1 | 2 | 3 |\n", grid[0], grid[1], grid[2])
-	fmt.Println("-------------")
+	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 4 | 5 | 6 |\n", grid[3], grid[4], grid[5])
-	fmt.Println("-------------")
+	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 7 | 8 | 9 |\n", grid[6], grid[7], grid[8])
 	fmt.Printf("\n")
 }
@@ -110,7 +110,7 @@ func nextPlayer() {
 
 func result() {
 	if winner == "X" || winner == "O" {
-		fmt.Printf("The player : %s won!!\n", winner)
+		fmt.Println("The player", winner ,"won!! 🏆" )
 	} else {
 		fmt.Println("Egality game")
 	}
@@ -125,10 +125,34 @@ func game() {
 		nextPlayer()
 	}
 	result()
+	replay()
 }
+
+func replay() {
+	var replay string
+	fmt.Print("Do you want to replay ? (Y/N) : ")
+	fmt.Scan(&replay)
+	for {
+		replay = strings.ToUpper(replay)
+		if replay == "Y" {
+			grid = []string{"-", "-", "-",
+				"-", "-", "-",
+				"-", "-", "-"}
+			endGame = false
+			game()
+			break
+		} else if replay == "N" {
+			fmt.Println("Thanks for playing, see you soon !")
+			break
+		} else {
+			fmt.Print("Please choose either (Y) or (N) : ")
+			fmt.Scan(&replay)
+		}
+	}
+}
+
 
 func main() {
 	game()
 }
-
 
