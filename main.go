@@ -115,3 +115,20 @@ func resultat() {
 		fmt.Println("Match nul")
 	}
 }
+
+func jouer() {
+	choixJoueur()
+	affichageGrille()
+	for !finJeu {
+		tour(joueurActuel)
+		verifierFinJeu()
+		joueurSuivant()
+	}
+	resultat()
+}
+
+func main() {
+	jouer()
+}
+
+
