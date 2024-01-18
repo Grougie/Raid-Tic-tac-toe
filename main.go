@@ -32,6 +32,14 @@ func choixJoueur() {
 	}
 }
 
-
+func affichageGrille() {
+	fmt.Println("\n-------------")
+	fmt.Printf("| %s | %s | %s |      | 1 | 2 | 3 |\n", grille[0], grille[1], grille[2])
+	fmt.Println("-------------")
+	fmt.Printf("| %s | %s | %s |      | 4 | 5 | 6 |\n", grille[3], grille[4], grille[5])
+	fmt.Println("-------------")
+	fmt.Printf("| %s | %s | %s |      | 7 | 8 | 9 |\n", grille[6], grille[7], grille[8])
+	fmt.Printf("\n")
+}
 
 
