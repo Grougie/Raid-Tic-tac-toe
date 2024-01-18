@@ -88,3 +88,9 @@ func verifierVictoire() {
 		gagnant = grille[0]
 	}
 }
+
+func verifierMatchNul() {
+	if !strings.Contains(strings.Join(grille, ""), "-") {
+		finJeu = true
+	}
+}
