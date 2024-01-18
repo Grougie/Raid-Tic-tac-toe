@@ -42,7 +42,7 @@ func printGrid() {
 	fmt.Printf("\n")
 }
 
-func tour(joueur string) {
+func round(joueur string) {
 	fmt.Printf("C'est le tour du joueur: %s\n", joueur)
 	var pos string
 	fmt.Print("Veuillez sélectionner un espace vide sur la grille entre 1 et 9 : ")
@@ -120,7 +120,7 @@ func jouer() {
 	choicePlayer()
 	printGrid()
 	for !finJeu {
-		tour(joueurActuel)
+		round(joueurActuel)
 		verifierFinJeu()
 		joueurSuivant()
 	}
