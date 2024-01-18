@@ -107,3 +107,11 @@ func joueurSuivant() {
 		joueurActuel = "X"
 	}
 }
+
+func resultat() {
+	if gagnant == "X" || gagnant == "O" {
+		fmt.Printf("Le joueur : %s a gagné\n", gagnant)
+	} else {
+		fmt.Println("Match nul")
+	}
+}
