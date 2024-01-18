@@ -74,3 +74,17 @@ func parsePosition(pos string) int {
 	fmt.Sscanf(pos, "%d", &index)
 	return index - 1
 }
+
+func verifierVictoire() {
+	if grille[0] == grille[1] && grille[1] == grille[2] && grille[2] != "-" ||
+		grille[3] == grille[4] && grille[4] == grille[5] && grille[5] != "-" ||
+		grille[6] == grille[7] && grille[7] == grille[8] && grille[8] != "-" ||
+		grille[0] == grille[3] && grille[3] == grille[6] && grille[6] != "-" ||
+		grille[1] == grille[4] && grille[4] == grille[7] && grille[7] != "-" ||
+		grille[2] == grille[5] && grille[5] == grille[8] && grille[8] != "-" ||
+		grille[0] == grille[4] && grille[4] == grille[8] && grille[8] != "-" ||
+		grille[2] == grille[4] && grille[4] == grille[6] && grille[6] != "-" {
+		finJeu = true
+		gagnant = grille[0]
+	}
+}
