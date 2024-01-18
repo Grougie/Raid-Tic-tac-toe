@@ -42,4 +42,30 @@ func affichageGrille() {
 	fmt.Printf("\n")
 }
 
+func tour(joueur string) {
+	fmt.Printf("C'est le tour du joueur: %s\n", joueur)
+	var pos string
+	fmt.Print("Veuillez sélectionner un espace vide sur la grille entre 1 et 9 : ")
+	fmt.Scan(&pos)
+
+	valide := false
+	for !valide {
+		for _, p := range []string{"1", "2", "3", "4", "5", "6", "7", "8", "9"} {
+			if pos == p {
+				break
+			}
+		}
+		index := parsePosition(pos)
+		if index >= 0 && index < 9 && grille[index] == "-" {
+			valide = true
+		} else {
+			fmt.Print("Vous ne pouvez pas accéder à cette position. Veuillez sélectionner un espace vide sur la grille entre 1 et 9 : ")
+			fmt.Scan(&pos)
+		}
+	}
+
+	index := parsePosition(pos)
+	grille[index] = joueur
+	affichageGrille()
+}
 
