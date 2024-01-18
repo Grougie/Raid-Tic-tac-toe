@@ -94,3 +94,11 @@ func verifierMatchNul() {
 		finJeu = true
 	}
 }
+
+func joueurSuivant() {
+	if joueurActuel == "X" {
+		joueurActuel = "O"
+	} else {
+		joueurActuel = "X"
+	}
+}
