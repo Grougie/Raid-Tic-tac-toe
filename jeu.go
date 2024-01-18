@@ -14,19 +14,19 @@ var gagnant string
 var finJeu = false
 
 func choicePlayer() {
-	fmt.Print("Veuillez choisir soit une croix (X), soit un rond (O) : ")
+	fmt.Print("Please choose either a cross (X) or a circle (O) : ")
 	fmt.Scan(&joueurActuel)
 
 	for {
 		joueurActuel = strings.ToUpper(joueurActuel)
 		if joueurActuel == "X" {
-			fmt.Println("Vous avez choisi X. Le joueur 2 aura O")
+			fmt.Println("You chose X. Player 2 will have O")
 			break
 		} else if joueurActuel == "O" {
-			fmt.Println("Vous avez choisi O. Le joueur 2 aura X")
+			fmt.Println("You chose O. Player 2 will have X")
 			break
 		} else {
-			fmt.Print("Veuillez choisir soit (X) soit (O) : ")
+			fmt.Print("Please choose either (X) or (O) : ")
 			fmt.Scan(&joueurActuel)
 		}
 	}
@@ -43,9 +43,9 @@ func printGrid() {
 }
 
 func round(joueur string) {
-	fmt.Printf("C'est le tour du joueur: %s\n", joueur)
+	fmt.Printf("It's the player's turn: %s\n", joueur)
 	var pos string
-	fmt.Print("Veuillez sélectionner un espace vide sur la grille entre 1 et 9 : ")
+	fmt.Print("Please select an empty space on the grid between 1 and 9 : ")
 	fmt.Scan(&pos)
 
 	valide := false
@@ -59,7 +59,7 @@ func round(joueur string) {
 		if index >= 0 && index < 9 && grille[index] == "-" {
 			valide = true
 		} else {
-			fmt.Print("Vous ne pouvez pas accéder à cette position. Veuillez sélectionner un espace vide sur la grille entre 1 et 9 : ")
+			fmt.Print("Error, You cannot access this position. Please select an empty space on the grid between 1 and 9 : ")
 			fmt.Scan(&pos)
 		}
 	}
@@ -110,9 +110,9 @@ func nextPlayer() {
 
 func result() {
 	if gagnant == "X" || gagnant == "O" {
-		fmt.Printf("Le joueur : %s a gagné\n", gagnant)
+		fmt.Printf("The player : %s won!!\n", gagnant)
 	} else {
-		fmt.Println("Match nul")
+		fmt.Println("Egality game")
 	}
 }
 
