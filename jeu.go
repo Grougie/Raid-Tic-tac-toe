@@ -32,7 +32,7 @@ func choicePlayer() {
 	}
 }
 
-func affichageGrille() {
+func printGrid() {
 	fmt.Println("\n-------------")
 	fmt.Printf("| %s | %s | %s |      | 1 | 2 | 3 |\n", grille[0], grille[1], grille[2])
 	fmt.Println("-------------")
@@ -66,7 +66,7 @@ func tour(joueur string) {
 
 	index := parsePosition(pos)
 	grille[index] = joueur
-	affichageGrille()
+	printGrid()
 }
 
 func parsePosition(pos string) int {
@@ -118,7 +118,7 @@ func resultat() {
 
 func jouer() {
 	choicePlayer()
-	affichageGrille()
+	printGrid()
 	for !finJeu {
 		tour(joueurActuel)
 		verifierFinJeu()
