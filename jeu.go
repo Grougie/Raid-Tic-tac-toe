@@ -126,9 +126,3 @@ func game() {
 	}
 	result()
 }
-
-func main() {
-	game()
-}
-
-
