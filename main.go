@@ -69,3 +69,8 @@ func tour(joueur string) {
 	affichageGrille()
 }
 
+func parsePosition(pos string) int {
+	index := -1
+	fmt.Sscanf(pos, "%d", &index)
+	return index - 1
+}
