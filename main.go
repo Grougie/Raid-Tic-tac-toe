@@ -75,6 +75,11 @@ func parsePosition(pos string) int {
 	return index - 1
 }
 
+func verifierFinJeu() {
+	verifierVictoire()
+	verifierMatchNul()
+}
+
 func verifierVictoire() {
 	if grille[0] == grille[1] && grille[1] == grille[2] && grille[2] != "-" ||
 		grille[3] == grille[4] && grille[4] == grille[5] && grille[5] != "-" ||
