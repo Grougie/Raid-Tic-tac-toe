@@ -108,7 +108,7 @@ func nextPlayer() {
 	}
 }
 
-func resultat() {
+func result() {
 	if gagnant == "X" || gagnant == "O" {
 		fmt.Printf("Le joueur : %s a gagné\n", gagnant)
 	} else {
@@ -124,7 +124,7 @@ func jouer() {
 		endGameChecker()
 		nextPlayer()
 	}
-	resultat()
+	result()
 }
 
 func main() {
