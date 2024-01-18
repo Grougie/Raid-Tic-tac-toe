@@ -116,7 +116,7 @@ func result() {
 	}
 }
 
-func jouer() {
+func game() {
 	choicePlayer()
 	printGrid()
 	for !finJeu {
@@ -128,7 +128,7 @@ func jouer() {
 }
 
 func main() {
-	jouer()
+	game()
 }
 
 
