@@ -14,6 +14,14 @@ var winner string
 var endGame = false
 
 func choicePlayer() {
+	fmt.Println("☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆")
+	fmt.Println("Welcome to the Tic Tac Toe game !")
+	fmt.Println("☆━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━☆")
+	fmt.Printf("\n")
+	fmt.Println("The grid is composed of 9 boxes numbered from 1 to 9.")
+	fmt.Println("To play, you must choose a box by entering the number corresponding to the box.")
+	fmt.Println("The first player to align 3 boxes wins the game.")
+	fmt.Printf("\n")
 	fmt.Print("Please choose either a cross (X) or a circle (O) : ")
 	fmt.Scan(&currentPlayer)
 
@@ -33,12 +41,13 @@ func choicePlayer() {
 }
 
 func printGrid() {
-	fmt.Println("\n-------------")
+	fmt.Println("\n▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 1 | 2 | 3 |\n", grid[0], grid[1], grid[2])
-	fmt.Println("-------------")
+	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 4 | 5 | 6 |\n", grid[3], grid[4], grid[5])
-	fmt.Println("-------------")
+	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 7 | 8 | 9 |\n", grid[6], grid[7], grid[8])
+	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("\n")
 }
 
@@ -110,7 +119,7 @@ func nextPlayer() {
 
 func result() {
 	if winner == "X" || winner == "O" {
-		fmt.Printf("The player : %s won!!\n", winner)
+		fmt.Println("The player", winner ,"won!! 🏆" )
 	} else {
 		fmt.Println("Egality game")
 	}
@@ -125,4 +134,33 @@ func game() {
 		nextPlayer()
 	}
 	result()
+	replay()
+}
+
+func replay() {
+	var replay string
+	fmt.Print("Do you want to replay ? (Y/N) : ")
+	fmt.Scan(&replay)
+	for {
+		replay = strings.ToUpper(replay)
+		if replay == "Y" {
+			grid = []string{"-", "-", "-",
+				"-", "-", "-",
+				"-", "-", "-"}
+			endGame = false
+			game()
+			break
+		} else if replay == "N" {
+			fmt.Println("Thanks for playing, see you soon !")
+			break
+		} else {
+			fmt.Print("Please choose either (Y) or (N) : ")
+			fmt.Scan(&replay)
+		}
+	}
+}
+
+
+func main() {
+	game()
 }
