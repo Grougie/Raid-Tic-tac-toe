@@ -163,4 +163,3 @@ func replay() {
 func main() {
 	game()
 }
-
