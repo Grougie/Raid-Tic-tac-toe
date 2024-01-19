@@ -47,6 +47,7 @@ func printGrid() {
 	fmt.Printf("| %s | %s | %s |      | 4 | 5 | 6 |\n", grid[3], grid[4], grid[5])
 	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("| %s | %s | %s |      | 7 | 8 | 9 |\n", grid[6], grid[7], grid[8])
+	fmt.Println("▬▬▬▬▬▬▬▬▬▬▬▬▬")
 	fmt.Printf("\n")
 }
 
